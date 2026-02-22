@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body>
+    <!-- Section navbar -->
+    <header>
+       <nav class="bg-neutral-primary bg-red-700">
+          <div
+            class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-2"
+          >
+            <a
+              href="#"
+              class="flex items-center space-x-3 rtl:space-x-reverse"
+            >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 9.3V12.2H16.6C16.8 12.2 16.9 12.4 16.9 12.6L16.5 14.5C16.5 14.6 16.3 14.7 16.2 14.7H14V22H11V14.8H9.3C9.1 14.8 9 14.7 9 14.5V12.6C9 12.4 9.1 12.3 9.3 12.3H11V9C11 7.3 12.3 6 14 6H16.7C16.9 6 17 6.1 17 6.3V8.7C17 8.9 16.9 9 16.7 9H14.3C14.1 9 14 9.1 14 9.3Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+            <path d="M15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H15C20 2 22 4 22 9V15C22 20 20 22 15 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5H7" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 16.5H8" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12.5H5" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+              <button class="flex items-center text-heading text-lg text-white">
+                English (UK)
+                <svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.4299 8.95001L11.7249 15.47C11.0512 16.24 9.9487 16.24 9.27495 15.47L3.56995 8.95001" stroke="#F4CACA" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+              </button>
+                <div class="z-50 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg     w-44" id="language-dropdown-menu">
+                  <ul class="p-2 text-sm text-body font-medium" role="none">
+                    <li>
+                      <a href="#" class="inline-flex items-center w-full p-2">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </nav>
+      <nav x-data="{ isOpen: false }" class="relative bg-white shadow">
+      <div class="container px-6 py-3 mx-auto">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+              <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-15">
+                      <a href="#">
+                          <img class="w-auto h-6 sm:h-13" src="images/logo.png" alt="Sela-logo">
+                      </a>
+
+                      <!-- Search input on desktop screen -->
+                      <div class="hidden mx-10 md:block">
+                          <div class="relative">
+                              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                  <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+                                      <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>
+                              </span>
+
+                              <input type="text" class="w-full py-2 pl-14 pr-4 text-gray-700 bg-white border rounded-md  focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="What are you looking for?">
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Mobile menu button -->
+                  <div class="flex lg:hidden">
+                      <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                          <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                          </svg>
+                          <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+
+              <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+              <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-2 transition-all duration-300 ease-in-out bg-white top-24  md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+                  <div class="flex flex-col md:flex-row md:mx-1">
+                      <a class="my-2 text-sm leading-5 text-red-700 font-bold transition-colors duration-300 transform  hover:text-blue-600  hover:underline md:mx-4 md:my-0" href="#">Explore</a>
+                      <a class="my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform  hover:text-blue-600  hover:underline md:mx-4 md:my-0" href="#">Museum</a>
+                      <a class="my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform  hover:text-blue-600  hover:underline md:mx-4 md:my-0" href="#">Events</a>
+                      <a class="my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform  hover:text-blue-600  hover:underline md:mx-4 md:my-0" href="#">About us</a>
+                      <a class="my-2 text-sm leading-5 text-gray-700 transition-colors duration-300 transform  hover:text-blue-600  hover:underline md:mx-4 md:my-0" href="#">FAQ</a>
+                  </div>
+                  <div>
+                    <button class="px-6 py-2 font-medium tracking-wide text-red-700 capitalize transition-colors duration-300 transform border-red-700 rounded-lg">
+                    Sign up
+                    </button>
+                    <button class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-700 rounded-lg">
+                      Log in
+                    </button>
+                  </div>
+              </div>
+          </div>
+    </header>
+    <main>
+      <section class="contiander-1 w-280 h-[450px] mx-auto">
+        <div class="h-48 w-275 mx-auto px-2 flex" >
+            <div class="mx-auto my-7 w-[1150px] h-[700px] flex">
+            <div class="w-[500px] h-[400px] mx-17 content-center">
+              <h3 class="text-4xl font-semibold text-black mt-3">Step into museum</h3>
+              <h3 class="text-4xl font-semibold text-black mt-3">with <span class="text-4xl font-semibold text-red-500">SelaMonty</span></h3>
+              <p class="text-lg font-xs text-black mt-3">Where art meets emotion and time slow down.</p>
+              <button class="w-30 font-medium h-10 rounded-xl border-2 border-red-600 text-red-500 text-lg mt-3 bg-white">Explore</button>
+              <div class="absolute">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.4299 5.93005L20.4999 12.0001L14.4299 18.0701" stroke="#B50000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.5 12H20.33" stroke="#B50000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              </div>
+            </div>
+            <div class="w-60 bg-cover mx-30">
+              <img src="images/image1.png" alt="image1">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-2 w-[1150px] h-[500px] bg-amber-300 mx-auto pt-10">
+        <div class="grid grid-cols-2 gap-3 my-5">
+          <div class="w-140 h-55 rounded-md bg-red-700">
+            <div class="flex justify-center pt-5 gap-5">
+              <div class="w-30 h-45">
+                <img src="images/image2.png" alt="imaged2" class="bg-cover h-45">
+              </div>
+              <div class="w-55 h-45 flex gap-2">
+                <svg width="95" height="15" viewBox="0 0 95 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="my-1">
+                  <path d="M8.58132 2.19377L9.68132 4.39377C9.83132 4.70002 10.2313 4.99377 10.5688 5.05002L12.5626 5.38127C13.8376 5.59377 14.1376 6.51877 13.2188 7.43127L11.6688 8.98127C11.4063 9.24377 11.2626 9.75002 11.3438 10.1125L11.7876 12.0313C12.1376 13.55 11.3313 14.1375 9.98757 13.3438L8.11882 12.2375C7.78132 12.0375 7.22507 12.0375 6.88132 12.2375L5.01257 13.3438C3.67507 14.1375 2.86257 13.5438 3.21257 12.0313L3.65632 10.1125C3.73757 9.75002 3.59382 9.24377 3.33132 8.98127L1.78132 7.43127C0.868815 6.51877 1.16257 5.59377 2.43757 5.38127L4.43132 5.05002C4.76257 4.99377 5.16257 4.70002 5.31257 4.39377L6.41257 2.19377C7.01257 1.00002 7.98757 1.00002 8.58132 2.19377Z" fill="#FFDE26" stroke="#FFDE26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M28.5813 2.19377L29.6813 4.39377C29.8313 4.70002 30.2313 4.99377 30.5688 5.05002L32.5626 5.38127C33.8376 5.59377 34.1376 6.51877 33.2188 7.43127L31.6688 8.98127C31.4063 9.24377 31.2626 9.75002 31.3438 10.1125L31.7876 12.0313C32.1376 13.55 31.3313 14.1375 29.9876 13.3438L28.1188 12.2375C27.7813 12.0375 27.2251 12.0375 26.8813 12.2375L25.0126 13.3438C23.6751 14.1375 22.8626 13.5438 23.2126 12.0313L23.6563 10.1125C23.7376 9.75002 23.5938 9.24377 23.3313 8.98127L21.7813 7.43127C20.8688 6.51877 21.1626 5.59377 22.4376 5.38127L24.4313 5.05002C24.7626 4.99377 25.1626 4.70002 25.3126 4.39377L26.4126 2.19377C27.0126 1.00002 27.9876 1.00002 28.5813 2.19377Z" fill="#FFDE26" stroke="#FFDE26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M48.5813 2.19414L49.6813 4.39414C49.8313 4.70039 50.2313 4.99414 50.5688 5.05039L52.5626 5.38164C53.8376 5.59414 54.1376 6.51914 53.2188 7.43164L51.6688 8.98164C51.4063 9.24414 51.2626 9.75039 51.3438 10.1129L51.7876 12.0316C52.1376 13.5504 51.3313 14.1379 49.9876 13.3441L48.1188 12.2379C47.7813 12.0379 47.2251 12.0379 46.8813 12.2379L45.0126 13.3441C43.6751 14.1379 42.8626 13.5441 43.2126 12.0316L43.6563 10.1129C43.7376 9.75039 43.5938 9.24414 43.3313 8.98164L41.7813 7.43164C40.8688 6.51914 41.1626 5.59414 42.4376 5.38164L44.4313 5.05039C44.7626 4.99414 45.1626 4.70039 45.3126 4.39414L46.4126 2.19414C47.0126 1.00039 47.9876 1.00039 48.5813 2.19414Z" fill="#FFDE26" stroke="#FFDE26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M68.5813 2.19414L69.6813 4.39414C69.8313 4.70039 70.2313 4.99414 70.5688 5.05039L72.5626 5.38164C73.8376 5.59414 74.1376 6.51914 73.2188 7.43164L71.6688 8.98164C71.4063 9.24414 71.2626 9.75039 71.3438 10.1129L71.7876 12.0316C72.1376 13.5504 71.3313 14.1379 69.9876 13.3441L68.1188 12.2379C67.7813 12.0379 67.2251 12.0379 66.8813 12.2379L65.0126 13.3441C63.6751 14.1379 62.8626 13.5441 63.2126 12.0316L63.6563 10.1129C63.7376 9.75039 63.5938 9.24414 63.3313 8.98164L61.7813 7.43164C60.8688 6.51914 61.1626 5.59414 62.4376 5.38164L64.4313 5.05039C64.7626 4.99414 65.1626 4.70039 65.3126 4.39414L66.4126 2.19414C67.0126 1.00039 67.9876 1.00039 68.5813 2.19414Z" fill="#FFDE26" stroke="#FFDE26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M88.5813 2.19377L89.6813 4.39377C89.8313 4.70002 90.2313 4.99377 90.5688 5.05002L92.5626 5.38127C93.8376 5.59377 94.1376 6.51877 93.2188 7.43127L91.6688 8.98127C91.4063 9.24377 91.2626 9.75002 91.3438 10.1125L91.7876 12.0313C92.1376 13.55 91.3313 14.1375 89.9876 13.3438L88.1188 12.2375C87.7813 12.0375 87.2251 12.0375 86.8813 12.2375L85.0126 13.3438C83.6751 14.1375 82.8626 13.5438 83.2126 12.0313L83.6563 10.1125C83.7376 9.75002 83.5938 9.24377 83.3313 8.98127L81.7813 7.43127C80.8688 6.51877 81.1626 5.59377 82.4376 5.38127L84.4313 5.05002C84.7626 4.99377 85.1626 4.70002 85.3126 4.39377L86.4126 2.19377C87.0126 1.00002 87.9876 1.00002 88.5813 2.19377Z" stroke="#DDE2E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <P class="text-white">(3245 reviews)</P>
+                <div class="h-45 flex justify-end">
+                  <div class="border-l-2 border-dashed border-white h-full"></div>
+                </div>
+              </div>
+              <div class="w-35 h-45 bg-amber-200">03</div>
+            </div>
+            
+          </div>
+          <div class="w-140 h-55 rounded-md bg-red-700">02</div>
+          <div class="w-140 h-55 rounded-md bg-red-700">03</div>
+          <div class="w-140 h-55 rounded-md bg-red-700">04</div>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

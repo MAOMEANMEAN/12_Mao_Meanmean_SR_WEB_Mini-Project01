@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.contiander-1{
+    background-image: url('../images/background-container1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
